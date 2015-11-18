@@ -58,3 +58,6 @@ target/
 
 # TransparentCA raw data (too big to share)
 raw_data/
+
+#my daily working notes
+notes.txt

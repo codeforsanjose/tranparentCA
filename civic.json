@@ -1,0 +1,27 @@
+{
+    "conformsTo": "http://codefordc.org/resources/specification.html",
+    "status": "Ideation",
+    "thumbnailUrl":"https://avatars2.githubusercontent.com/u/6627417?v=3&s=200",
+    "contact":
+    {
+        "name": "Max",
+        "email": "sky3@tut.by"
+    },
+    "bornAt": "Code for San Jose",
+    "geography": "CA",
+    "communityPartner": {"Transparent California":"http://transparentcalifornia.com/"},
+    "politicalEntity": {},
+    "governmentPartner": {},
+    "type": "Dataset",
+    "data": {
+        "Transparent CA datasets":"http://transparentcalifornia.com/downloads/"
+    },
+    "needs": [],
+    "categories": [
+        {"category":"Politics"},
+        {"category":"Government"},
+        {"category":"Open Data"},
+        {"category":"Public Finances"}
+    ],
+    "moreInfo": ""
+}

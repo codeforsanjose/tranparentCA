@@ -61,3 +61,8 @@ raw_data/
 
 #my daily working notes
 notes.txt
+
+# Eclipse files
+.pydevproject
+.project
+

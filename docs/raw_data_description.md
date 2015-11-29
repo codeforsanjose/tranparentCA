@@ -11,22 +11,22 @@
 1. Receive the list of files.
 2. Organize files by years.
 3. Read data from all files except "pensions" and "payroll":
-	a. Verify that each raw contains correct data.
-	b. Normalize data.
-	c. Check if the current raw already is presented into database (compare by name, job title, salaries) to avoid duplication.
-	d. If the raw is not found, put into database, table "salaries".
-	e. Tag each record with tag related to the source file.
+  a. Verify that each raw contains correct data.
+  b. Normalize data.
+  c. Check if the current raw already is presented into database (compare by name, job title, salaries) to avoid duplication.
+  d. If the raw is not found, put into database, table "salaries".
+  e. Tag each record with tag related to the source file.
 4. Do the same with "pensions" file if it is found, but data goes into "pensions" table.
 5. Read "payroll" file:
-	a. Verify that each raw contains correct data.
-	b. Normalize data.
-	c. Check if the current raw already is presented into database (compare by name, job title, salaries). Check  the last field information (agency/jurisdiction_name) is the same.
-	d. If the current raw is found in the database, move to next raw.
-	e. If the current raw is not found in the database, add it with appropriate tag.
+  a. Verify that each raw contains correct data.
+  b. Normalize data.
+  c. Check if the current raw already is presented into database (compare by name, job title, salaries). Check  the last field information (agency/jurisdiction_name) is the same.
+  d. If the current raw is found in the database, move to next raw.
+  e. If the current raw is not found in the database, add it with appropriate tag.
 6. Put the names of successfully processed files into separate database table in order to implement "add" and "update" modes for new/changed csv files.
 7. When all data is processed, additional index tables can be created:
-	a. Job titles.
-	b. Agency/jurisdiction_name.
+  a. Job titles.
+  b. Agency/jurisdiction_name.
 8. Plain statistical analysis can be performed as soon as raw data has been processed with SQL queries and result can be stored in separate table for future instant access. #TODO: define what indicators can be obtained.
 
 ## Additional info about "pensions" file
@@ -37,7 +37,5 @@ Pensions files contain additional fields that can be processed especially:
 
 ## Misc. info
 All files contain fields with no data. This field should be stored in database in case of: 
-	a. Future extension of the provided information.
-	b. Inconsistency in the field filling from year to year.
-
-	
+  a. Future extension of the provided information.
+  b. Inconsistency in the field filling from year to year.

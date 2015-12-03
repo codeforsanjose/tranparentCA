@@ -58,15 +58,15 @@ def read_headers(full_filename):
         return headers
 
 
-def check_file_exists(full_path, isDirectory):
+def check_file_exists(full_path, is_directory):
     # TODO: Document it
     """ Check if given full_path exists and
     it is correct type of file system instance"""
     if not os.path.exists(full_path):
         raise FileNotFoundError("Path doesn't exist")
 
-    if (isDirectory) and (not os.path.isdir(full_path)):
+    if (is_directory) and (not os.path.isdir(full_path)):
         raise FileNotFoundError("Target is not a directory")
 
-    if (not isDirectory) and (os.path.isdir(full_path)):
+    if (not is_directory) and (os.path.isdir(full_path)):
         raise FileNotFoundError("Target is not a file")

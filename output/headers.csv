@@ -1,0 +1,27 @@
+2010-counties.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2010-payroll.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2011-cities.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2011-counties.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2011-payroll.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2011-pensions.csv,employee_name,job_title,employer,pension_amount,benefits_amount,disability_amount,total_amount,years_of_service,year_of_retirement,year,notes,pension_system
+2011-university-system.csv,employee_name,job_title,base_pay,overtime_pay,other_pay,total_benefits,total_pay,total_pay_benefits,year,notes,jurisdiction_name
+2012-cities.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2012-community-colleges.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2012-counties.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2012-payroll.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2012-pensions.csv,employee_name,job_title,employer,pension_amount,benefits_amount,disability_amount,total_amount,years_of_service,year_of_retirement,year,notes,pension_system
+2012-school-districts.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2012-special-districts.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2012-university-system.csv,employee_name,job_title,base_pay,overtime_pay,other_pay,total_benefits,total_pay,total_pay_benefits,year,notes,jurisdiction_name
+2013-cities.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2013-community-colleges.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2013-counties.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2013-payroll.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2013-pensions.csv,employee_name,job_title,employer,pension_amount,benefits_amount,disability_amount,total_amount,years_of_service,year_of_retirement,year,notes,pension_system
+2013-school-districts.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2013-special-districts.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2013-university-system.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2014-community-colleges.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2014-pensions.csv,employee_name,job_title,employer,pension_amount,benefits_amount,disability_amount,total_amount,years_of_service,year_of_retirement,year,notes,pension_system
+2014-school-districts.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency
+2014-university-system.csv,Employee Name,Job Title,Base Pay,Overtime Pay,Other Pay,Benefits,Total Pay,Total Pay & Benefits,Year,Notes,Agency

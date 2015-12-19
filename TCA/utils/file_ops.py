@@ -15,6 +15,9 @@ def list_files(directory="..\\raw_data\\"):
        there is no argument provided.
 
     Returns:
+        Dictionary:
+        key - year as integer
+        value - list of full absolute csv filenames as string
     """
     full_path = os.path.realpath(directory)
 
@@ -51,6 +54,16 @@ def list_files(directory="..\\raw_data\\"):
 
 
 def read_headers(full_filename):
+    """ Open given file as csv and return first line of the file
+    
+    Args:
+        full_filename - absolute path to csv file
+
+    Returns:
+        Records of the first line of file as list of strings
+
+    """
+
     check_file_exists(full_filename, False)
     with open(full_filename, "rt") as file:
         file_csv = csv.reader(file)

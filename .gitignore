@@ -68,3 +68,5 @@ notes.txt
 .checkstyle
 
 
+.eclipse-pmd
+.settings/org.eclipse.core.resources.prefs

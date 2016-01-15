@@ -55,7 +55,7 @@ def list_files(directory="..\\raw_data\\"):
 
 def read_headers(full_filename):
     """ Open given file as csv and return first line of the file
-    
+
     Args:
         full_filename - absolute path to csv file
 
@@ -69,6 +69,27 @@ def read_headers(full_filename):
         file_csv = csv.reader(file)
         headers = next(file_csv)
         return headers
+
+# TODO:  make works with parameter
+
+
+def all_files(directory="..\\raw_data\\"):
+    """ Return flat list of all csv files in the given directory.
+
+    Args:
+        directory [string] full path to directory with csv files.
+        Default project layout is used if it is not provided
+
+    Returns:
+        Flat list of csv files as absolute names.
+
+    """
+
+    files = list_files(directory)
+    result = []
+    for year in files.keys():
+        result += files[year]
+    return result
 
 
 def check_file_exists(full_path, is_directory):

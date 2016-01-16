@@ -29,7 +29,7 @@ def stats_print(filename, stats):
     hour = stats[1][0]
     minutes = stats[1][1]
     seconds = stats[1][2]
-    print('{:<20} # {:>20} # {:02d}:{:02d}:{:02d}'.format(
+    print('{:<35} # {:>18} # {:02d}:{:02d}:{:02d}'.format(
         filename, stats[0], hour, minutes, seconds))
 
 # read all files
@@ -43,6 +43,10 @@ total_records = 0
 
 # statistics dictionary
 stats = {}
+
+# print header for result table
+print('{:^35} # {:^18} # {:^10}'.format(
+    'File name', 'Numb. of records', 'Time'))
 
 # just read the all records in each file, count them and measure time of
 # reading
@@ -64,17 +68,10 @@ for file in result:
 
     # put result in the statistics collector
     stats[file_name] = (file_records, duration)
+    stats_print(file_name, (file_records, duration))
 
 total_end_time = time.time()
 total_duration = formated_time(total_end_time - total_start_time)
-
-
-# print results
-print('{:^20} # {:^20} # {:^20}'.format(
-    'File name', 'Numb. of records', 'Time (hour : min : sec)'))
-
-for item in stats:
-    stats_print(item, stats[item])
 
 stats["Total"] = (total_records, total_duration)
 print("=================")

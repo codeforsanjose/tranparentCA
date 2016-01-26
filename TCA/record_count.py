@@ -57,7 +57,7 @@ for file in result:
     file_name = (split_name[len(split_name) - 1])
 
     # read records, count them and measure time
-    records = pipeline.read(file)
+    records = pipeline.get_record(file)
     file_records = 0
     file_start_time = time.time()
     for rec in records:

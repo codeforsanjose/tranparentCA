@@ -99,6 +99,8 @@ def read(file):
     # process headers to make them uniform
     for item in range(0, num_of_headers):
 
+        # TODO Make possible to use custom processing rules
+
         # processing rule: university-system.csv has different name for
         # benefits
         if headers[item] == 'total_benefits':
@@ -228,6 +230,9 @@ def get_record(file):
 
     records = read(file)
     for record in records:
+
+        # TODO make possible to use custom validators / filters here
+
         validate_money_field(record, logger)
         validate_year_field(record, logger)
 

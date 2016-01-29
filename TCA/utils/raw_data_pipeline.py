@@ -16,6 +16,67 @@ money_fields = ['BASE_PAY', 'OVERTIME_PAY', 'OTHER_PAY', 'BENEFITS', 'TOTAL_PAY'
 year_fields = ['YEAR', 'YEAR_OF_RETIREMENT']
 
 
+class validation_error_logger:
+    # Store opened log file handler
+    error_log_file_name = None
+    error_log_filehandler = None
+    # Store csv writer
+    csv_writer = None
+    # validation errors
+    errors = {}
+    is_file_opened = False
+
+    def __init__(self, file_name):
+        self.error_log_file_name = '..\\output\\raw_data_validation_errors\\' + \
+            file_name
+
+    # check if the pair field and field value is already in the log
+    # if not add into the log
+    def log(self, field, field_value):
+
+        if not self.is_file_opened:
+            self.error_log_filehandler = open(
+                self.error_log_file_name, 'at', newline='')
+            self.csv_writer = csv.writer(self.error_log_filehandler)
+            self.csv_writer.writerow(['Field', 'Value'])
+            self.is_file_opened = True
+
+        # check is the field already in error log
+        if field in self.errors.keys():
+
+            # obtain know incorrect values
+            known_errors = self.errors[field]
+
+            # check is the value already in error log
+            if field_value in known_errors:
+
+                # if we know it, just return
+                return
+
+            # we don't know it, so add
+            else:
+                self.errors[field].append(field_value)
+
+        # field is not in the error log, so add it with value
+        else:
+            self.errors[field] = [field_value]
+
+    def close(self):
+
+        if not self.is_file_opened:
+            return
+
+        # save collected values
+        for field in self.errors.keys():
+            for field_value in self.errors[field]:
+                self.csv_writer.writerow([field, field_value])
+
+        # save close logger file
+        self.error_log_filehandler.close()
+
+# ====================
+
+
 def read(file):
     """This function a generator reading csv file with raw data.
 
@@ -92,7 +153,7 @@ def read(file):
             yield record_dict
 
 
-def validate_money_field(record):
+def validate_money_field(record, logger):
 
     for field in money_fields:
 
@@ -107,20 +168,21 @@ def validate_money_field(record):
         if field_value == 'Not Provided':
             continue
 
-        # If value looks like -0.0 let it pass
-        if re.match('-?\d+\.?\d*', field_value) != None:
+        # If value looks like 0.0 let it pass
+        if re.match('\d+\.?\d*', field_value) != None:
             continue
 
         # If value is empty it is ok
         if field_value == '':
             continue
 
-        validating_error_log(record['FILE'], field, field_value)
+        # log all other values
+        logger.log(field, field_value)
 
     return
 
 
-def validate_year_field(record):
+def validate_year_field(record, logger):
     # See explanation of the algo in the validate_money_field
 
     for field in year_fields:
@@ -135,7 +197,7 @@ def validate_year_field(record):
         if re.match('[1,2][9,0][0-9][0-9]', field_value) != None:
             return
 
-        validating_error_log(record['FILE'], field, field_value)
+        logger.log(field, field_value)
 
     return
 
@@ -150,16 +212,6 @@ def validating_error_log(file_name, field, field_value):
     error_log_name = '..\\output\\raw_data_validation_errors\\' + \
         file_name
 
-    if not os.path.exists(error_log_name):
-        with open(error_log_name, 'wt') as logfile:
-            log_csv = csv.writer(logfile)
-            log_csv.writerow(['Field', 'Value'])
-
-    error_log = open(error_log_name, 'at')
-    log_csv = csv.writer(error_log)
-    log_csv.writerow([field, field_value])
-    error_log.close()
-
 
 def get_record(file):
     '''Interface method for pipeline.
@@ -172,13 +224,13 @@ def get_record(file):
     fo.check_file_exists(file, False)
     split_name = file.split('\\')
     file_name = (split_name[len(split_name) - 1])
-    error_log_file = '..\\output\\raw_data_validation_errors\\' + file_name
-    if os.path.exists(error_log_file):
-        os.remove(error_log_file)
+    logger = validation_error_logger(file_name)
 
     records = read(file)
     for record in records:
-        validate_money_field(record)
-        validate_year_field(record)
+        validate_money_field(record, logger)
+        validate_year_field(record, logger)
 
         yield record
+
+    logger.close()

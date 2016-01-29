@@ -1,3 +1,5 @@
+raw data pipeline speed without any validation
+
              File name              #  Numb. of records  #   Time
 2010-counties.csv                   #               1323 # 00:00:00
 2010-payroll.csv                    #               1323 # 00:00:00

@@ -1,0 +1,32 @@
+ raw data pipeline speed with validation and logging incorrect values into logs.
+ 
+             File name              #  Numb. of records  #    Time   
+2010-counties.csv                   #               1323 # 00:00:00
+2010-payroll.csv                    #               1323 # 00:00:00
+2011-cities.csv                     #             222455 # 00:00:12
+2011-counties.csv                   #             370501 # 00:00:21
+2011-payroll.csv                    #            1173287 # 00:01:09
+2011-pensions.csv                   #             272699 # 00:00:13
+2011-university-system.csv          #             332951 # 00:00:21
+2012-cities.csv                     #             245678 # 00:00:14
+2012-community-colleges.csv         #             161548 # 00:00:09
+2012-counties.csv                   #             383221 # 00:00:22
+2012-payroll.csv                    #            1988338 # 00:01:55
+2012-pensions.csv                   #             875141 # 00:00:41
+2012-school-districts.csv           #             499582 # 00:00:33
+2012-special-districts.csv          #             116052 # 00:00:06
+2012-university-system.csv          #             337367 # 00:00:18
+2013-cities.csv                     #             251701 # 00:00:15
+2013-community-colleges.csv         #             164719 # 00:00:09
+2013-counties.csv                   #             385594 # 00:00:21
+2013-payroll.csv                    #            2302536 # 00:02:31
+2013-pensions.csv                   #            1078182 # 00:00:55
+2013-school-districts.csv           #             792619 # 00:01:03
+2013-special-districts.csv          #             136181 # 00:00:12
+2013-university-system.csv          #             327071 # 00:00:25
+2014-community-colleges.csv         #             161568 # 00:00:10
+2014-pensions.csv                   #            1138423 # 00:01:15
+2014-school-districts.csv           #             839941 # 00:00:51
+2014-university-system.csv          #             337797 # 00:00:22
+=================
+TOTAL                               #           14897798 # 00:15:02

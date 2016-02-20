@@ -24,7 +24,7 @@ All files contain fields with no data. This field should be stored in database i
 
 ### Incorrect values
 1. Many money fields contain negative values. They can be stored and analyzed separately.
-2. Some money fields contain "Aggregate" and "N/A" as value. It should be converted to null values.
+2. Some money fields contain "Aggregate", "Not Provided" and "N/A" as value. They should be converted to null values.
 3. The years\_of\_service field in pensions contains "Beneficiary". It should be converted to null values.
 
 ### Pipeline speed of reading

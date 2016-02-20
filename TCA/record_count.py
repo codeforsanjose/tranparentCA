@@ -11,6 +11,7 @@ import utils.raw_data_pipeline as pipeline
 
 
 def formated_time(seconds_total):
+    # TODO: move in the utils module this function
     ''' convert number of seconds in the tuple (hours, minutes, seconds)
     '''
     minutes, seconds = divmod(seconds_total, 60)

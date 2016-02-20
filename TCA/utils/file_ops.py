@@ -2,8 +2,12 @@ import csv
 import os
 import re
 
+# TODO: add function returning absolute path by short file name and year
+# (ex. 2011, pensions)
 
 # TODO: Document list_file, grammar check, add unit test
+
+
 def list_files(directory="..\\raw_data\\"):
     """This function returns the sorted list of all csv files in a directory.
 

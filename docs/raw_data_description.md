@@ -23,10 +23,12 @@ All files contain fields with no data. This field should be stored in database i
   2. Inconsistency in the field filling from year to year.
 
 ### Incorrect values
-1. Many money fields contain negative values.
-2. Some money fields contain "Aggregate" and "N/A" as value.
-3. The years\_of\_service field in pensions contains "Beneficiary".
+1. Many money fields contain negative values. They can be stored and analyzed separately.
+2. Some money fields contain "Aggregate" and "N/A" as value. It should be converted to null values.
+3. The years\_of\_service field in pensions contains "Beneficiary". It should be converted to null values.
 
+### Pipeline speed of reading
+16000-31000 records per second (with or without processing).
 # Data parsing strategy
 1. Receive the list of files.
 2. Organize files by years.

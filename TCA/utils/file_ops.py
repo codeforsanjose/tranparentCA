@@ -1,6 +1,7 @@
 import csv
 import os
 import re
+import utils.config as conf
 
 # TODO: add function returning absolute path by short file name and year
 # (ex. 2011, pensions)
@@ -8,8 +9,8 @@ import re
 # TODO: Document list_file, grammar check, add unit test
 
 
-def list_files(directory="..\\raw_data\\"):
-    """This function returns the sorted list of all csv files in a directory.
+def list_files(directory=conf.DEFAULT_RAW_DATA_DIR):
+    """This function returns the dictionary with all csv files in a directory.
 
     It doesn't perform recursive subdirectory search.
 
@@ -77,8 +78,8 @@ def read_headers(full_filename):
 # TODO:  make works with parameter
 
 
-def all_files(directory="..\\raw_data\\"):
-    """ Return flat list of all csv files in the given directory.
+def all_files(directory=conf.DEFAULT_RAW_DATA_DIR):
+    """ Return flat list with names of all csv files in the given directory.
 
     Args:
         directory [string] full path to directory with csv files.

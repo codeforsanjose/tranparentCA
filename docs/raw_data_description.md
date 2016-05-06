@@ -1,34 +1,68 @@
-# Files and data distribution
+# Raw files description
+
+## Summary
 1. Each year is represented by several csv files. Number of files per year varies from year to year.
 2. All years except 2014 have "payroll" file.
 3. It looks like the payroll file consolidate data from other files for the particular year: several years and several records from different files were checked manually.
 4. The records from payroll files are equivalent to the records in the other files while data format can slightly vary.
-5. Grouping data by other files like "cities" or "counties" can be used as additional dimension for analysis, so the fact that record are the member of two files should be marked.
-6. Starting from 2011 additional file "pensions" is present. It contains unique data in the own format and should be analysed as separate dimension.
-7. It was found during review that some csv files contain not properly formatted information in the middle of the files. This information appears to be some notes or messages dumped during data export. Data validation is needed to find this information and understand of it usability.
-8. Total size of csv files: 1.58 GB.
-9. Total number of records in the raw files: 14,897,798.
+5. Starting from 2011 additional file "pensions" is present. It contains unique data in the own format and should be analysed as separate dimension.
+6. It was found during review that some csv files contain not properly formatted information in the middle of the files. 
+7. Total size of csv files: 1.58 GB.
+8. Total number of records in the raw files: 14,897,798.
 
-## Additional info about "pensions" file
-Pensions files contain additional fields that can be processed especially:
+## Fields in the salary files:
+1. Employee Name
+2. Job Title
+3. Base Pay
+4. Overtime Pay
+5. Other Pay
+6. Benefits
+7. Total Pay
+8. Total Pay & Benefits
+9. Year
+10. Notes
+11. Agency / Jurisdiction Name
 
-1. Employer: index can be created.
-2. Notes: just store it.
-3. Pension system: index can be created.
+## Fields in the pension files:
+1. Employee name
+2. Job title
+3. Employer
+4. Pension amount
+5. Benefits amount
+6. Disability amount
+7. Total amount
+8. Years of service
+9. Year of retirement
+10. Year
+11. Notes
+12. Pension system
 
-## Misc. info
+** Note:** The names of the columns inside the csv files are different from file to file, but the real data is always the same. We assume that column order stays the same and will do the import based on the order of columns.
+
+## Incorrect values
+
+### General
 All files contain fields with no data. This field should be stored in database in case of: 
 
   1. Future extension of the provided information.
   2. Inconsistency in the field filling from year to year.
 
-### Incorrect values
-1. Many money fields contain negative values. They can be stored and analyzed separately.
-2. Some money fields contain "Aggregate" and "N/A" as value. It should be converted to null values.
-3. The years\_of\_service field in pensions contains "Beneficiary". It should be converted to null values.
+### Money fields
 
-### Pipeline speed of reading
-16000-31000 records per second (with or without processing).
+1. Negative values - can be stored and analyzed separately.
+2. Values: "Aggregate", "N/A", empty - should be converted to null values.
+
+### Years fields
+1. The years\_of\_service field in pensions contains "Beneficiary" - should be converted to null values.
+2. Some year fields contains empty values - should be converted to null
+
+# Data consolidating strategy
+
+1.  Grouping data by other files like "cities" or "counties" can be used as additional dimension for analysis, so the fact that record are the member of two files should be marked.
+2.  Pensions files contain additional fields that can be processed especially:
+	1. Employer: index can be created.
+	2. Pension system: index can be created.
+
 # Data parsing strategy
 1. Receive the list of files.
 2. Organize files by years.

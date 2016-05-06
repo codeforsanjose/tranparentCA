@@ -10,7 +10,7 @@ import time
 
 import utils.file_ops as fo
 import utils.misc as misc
-import utils.raw_data_pipeline as pipeline
+import utils.raw_data_pipeline_old as pipeline
 
 
 def stats_print(filename, stats):

@@ -31,16 +31,23 @@ df_university_system = pd.read_csv(
 df_result = pd.concat(
     objs=[df_payroll, df_cities, df_counties, df_university_system])
 file_end_time = time.time()
+
 print(misc.formatted_time(file_end_time - file_start_time))
+
 print(len(df_result))
-# print(df_result.info())
+print(df_result.info())
+
 df_result.drop_duplicates(['Employee Name', 'Job Title', 'Base Pay', 'Overtime Pay',
                            'Other Pay', 'Benefits', 'Total Pay',
                            'Total Pay & Benefits', 'Year'], inplace=True)  # Inplace should be true or it retruns not duplicated set
+
 print(len(df_result))
+print(df_result.info())
+
 #df_grouped = df_result.groupby('Job Title').count()
 # df_grouped.to_csv('output.csv')
-df_result.to_csv('output.csv')
+# df_result.to_csv('output.csv')
+
 print("done")
 
 ''' 

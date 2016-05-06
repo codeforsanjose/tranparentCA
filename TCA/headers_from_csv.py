@@ -1,3 +1,7 @@
+'''
+Utility script to read the table headers and write them in one file.
+'''
+
 import csv
 
 import utils.file_ops

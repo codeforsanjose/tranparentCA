@@ -2,25 +2,15 @@
     that all the records can be processed.
     Script reads all records from all files, count them and
     print results along with time of processing
+    
+    # TODO: Outdated and can be deleted
     '''
 
 import time
 
 import utils.file_ops as fo
+import utils.misc as misc
 import utils.raw_data_pipeline as pipeline
-
-
-def formated_time(seconds_total):
-    # TODO: move in the utils module this function
-    ''' convert number of seconds in the tuple (hours, minutes, seconds)
-    '''
-    minutes, seconds = divmod(seconds_total, 60)
-    hours, minutes = divmod(minutes, 60)
-    seconds = round(seconds)
-    minutes = round(minutes)
-    hours = round(hours)
-
-    return (hours, minutes, seconds)
 
 
 def stats_print(filename, stats):
@@ -65,14 +55,14 @@ for file in result:
         file_records += 1
     file_end_time = time.time()
     total_records += file_records
-    duration = formated_time(file_end_time - file_start_time)
+    duration = misc.formatted_time(file_end_time - file_start_time)
 
     # put result in the statistics collector
     stats[file_name] = (file_records, duration)
     stats_print(file_name, (file_records, duration))
 
 total_end_time = time.time()
-total_duration = formated_time(total_end_time - total_start_time)
+total_duration = misc.formatted_time(total_end_time - total_start_time)
 
 stats["Total"] = (total_records, total_duration)
 print("=================")

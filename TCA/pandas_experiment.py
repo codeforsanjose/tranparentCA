@@ -1,18 +1,7 @@
 import time
 
 import pandas as pd
-
-
-def formated_time(seconds_total):
-    ''' convert number of seconds in the tuple (hours, minutes, seconds)
-    '''
-    minutes, seconds = divmod(seconds_total, 60)
-    hours, minutes = divmod(minutes, 60)
-    seconds = round(seconds)
-    minutes = round(minutes)
-    hours = round(hours)
-
-    return (hours, minutes, seconds)
+import utils.misc as misc
 
 
 file_start_time = time.time()
@@ -42,7 +31,7 @@ df_university_system = pd.read_csv(
 df_result = pd.concat(
     objs=[df_payroll, df_cities, df_counties, df_university_system])
 file_end_time = time.time()
-print(formated_time(file_end_time - file_start_time))
+print(misc.formatted_time(file_end_time - file_start_time))
 print(len(df_result))
 # print(df_result.info())
 df_result.drop_duplicates(['Employee Name', 'Job Title', 'Base Pay', 'Overtime Pay',

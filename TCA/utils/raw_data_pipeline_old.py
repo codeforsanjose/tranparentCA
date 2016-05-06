@@ -1,3 +1,7 @@
+'''
+TODO: Outdated script to be refactored, splitted and deleted. Use direct file reading
+'''
+
 import csv
 import os
 import re

@@ -1,4 +1,3 @@
-import sys
 import time
 
 import pandas as pd
@@ -48,11 +47,12 @@ print(len(df_result))
 # print(df_result.info())
 df_result.drop_duplicates(['Employee Name', 'Job Title', 'Base Pay', 'Overtime Pay',
                            'Other Pay', 'Benefits', 'Total Pay',
-                           'Total Pay & Benefits', 'Year'])
+                           'Total Pay & Benefits', 'Year'], inplace=True)  # Inplace should be true or it retruns not duplicated set
 print(len(df_result))
 #df_grouped = df_result.groupby('Job Title').count()
 # df_grouped.to_csv('output.csv')
 df_result.to_csv('output.csv')
+print("done")
 
 ''' 
 
